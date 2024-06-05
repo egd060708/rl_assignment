@@ -1,5 +1,6 @@
 clc;
 clear;
+% 使用多步mpc进行仿真
 
 % 定义step数量k
 k_steps = 1000; %预测区间
