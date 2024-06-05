@@ -1,0 +1,7 @@
+function car_lqr(x_c,v_r)
+% x_c 为三维状态向量, v_r 为上一个周期求出的参考速度
+A_ss = [0,0,-v_r*sin(x_c(2));
+        0,0, v_r*cos(x_c(2));
+        0,0,,]
+
+
