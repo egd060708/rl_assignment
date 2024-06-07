@@ -1,0 +1,13 @@
+function P_out = LSE(X, Y)
+%     P = inv(transpose(X) * X) * transpose(X) * Y;
+    % 将 B 展平成向量
+    y_vec = Y(:);
+    % 构造 Kronecker 积矩阵
+    I = eye(size(X, 1)); % 单位矩阵，大小为 X 的行数
+    K = kron(transpose(X), I);
+    % 使用最小二乘法求解 vec(P)
+    p_vec = K \ y_vec;
+    % 将 vec(A) 重塑为矩阵 A
+    P = reshape(p_vec, size(Y, 1), size(X, 1));
+    P_out = Exchange_P2Matrix(P);
+end
